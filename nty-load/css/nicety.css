@@ -1,0 +1,292 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  user-select: none;
+  -moz-user-select: none;
+  cursor:none;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* particleground demo */
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+
+i {
+	transition: all .3s;
+	cursor: none;
+}
+
+i:hover {
+	color: rgb(0, 119, 255);
+}
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.tlo-general, .loading, #currentSong, #pressspacebar, #skipSongTip, #watermark, #controlsy{
+  display: block;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+
+#watermark {
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.705));
+  width: fit-content;
+  margin-top: 37%;
+}
+
+.tlo-general{
+  bottom: 90vh;
+  transform: translate(-0%, -90vh);
+  animation: scale-down-center 8s;
+  animation-iteration-count: infinite;
+
+}
+#sbutton {
+  padding-top: 1.5vh;
+}
+
+#currentSong {
+  filter: opacity(15%);
+  bottom: 5vh;
+  transform: translate(-0%, -5vh);
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+@keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+#pressspacebar {
+  border-bottom: 1px solid #25a8ea88;
+  max-width: fit-content;
+  position: absolute;
+  bottom: 14.5vh;
+  transform: translate(-0%, -14.5vh);
+  padding-bottom: 0.5vh;
+
+}
+#skipSongTipLetter{
+  color: #25a9ea;
+}
+
+#skipSongTip {
+  filter: opacity(15%);
+}
+
+
+
+body::before {
+	content: "";
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	background-image: url("https://images4.alphacoders.com/720/thumb-1920-720499.jpg");
+	filter: contrast(120%) blur(4px);
+	color: rgb(255, 255, 255);
+	background-size: 100% 100%;
+	-webkit-animation: Gradient 120s ease infinite;
+	-moz-animation: Gradient 120s ease infinite;
+	animation: Gradient 120s ease infinite;
+
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+body {
+
+	background-size: 100% 100%;
+	background-color: black;
+
+
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  color: white;
+  font: 300 4em/150% Montserrat;
+  text-align: center;}
+
+
+/* loading dots */
+
+
+h1 {
+  text-transform: uppercase;
+  font-size: 85px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+h1::after {
+  content: '';
+  width: 80px;
+  display: block;
+  background: #fff;
+  height: 10px;
+  margin: 30px auto;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0 0 30px 0;
+  font-size: 24px;
+}
+
+
+
+.loadbar {
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.13);
+  height: 12px;
+
+
+  margin-left: 2px;
+  margin-right: 3px;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  border-radius: 5px;
+  max-width: 80vw;
+
+  overflow: hidden;
+
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translate(-50%, -2%);
+  display: block;
+}
+
+.progressBar {
+  width: 0%;
+  background-color: #25a9ea;
+  height: 12px;
+
+  border-radius: 5px;
+
+  position: absolute;
+  left: 0%;
+  transition:10000ms linear;
+}
+
+
+.progressBar::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-image: linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, .2) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255, 255, 255, .2) 50%, 
+    rgba(255, 255, 255, .2) 75%, 
+    transparent 75%, 
+    transparent
+  );
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+
+.orange > span {
+  background-color: #2296cf;
+}
+
+.red > span {
+  background-color: #28bcec;
+}
+
+
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}

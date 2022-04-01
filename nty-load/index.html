@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en' class='no-js'>
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script> window.onload = function() { var context = new AudioContext(); }</script>
+    <meta charset='UTF-8' />
+    <title>avac.online</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='css/nicety.css' />
+    <link rel='stylesheet' href='css/style.css' />    
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script type='text/javascript' src='js/demo.js'></script>
+    <script type='text/javascript' src='js/script.js'></script>
+</head>
+<body onload='startTime()'>
+	<div id='player'></div>
+    <audio id="clearsound" src="sound/pop.ogg" preload="auto"></audio>
+    <canvas width='300' height='600' style="position: absolute; z-index: 90; left: 42%; background-color: rgb(37, 31, 48); border-radius: 10px; border: 2px solid rgb(47, 47, 68); transform: scale(1.1);"></canvas>
+    <button id="playbutton" onclick="playButtonClicked();" style="z-index: -200; display: none;">Play</button>
+    <script src='js/tetris.js'></script>
+    <script src='js/controller.js'></script>
+    <script src='js/render.js'></script>
+        <div id='intro'>
+            <div class="tlo-general">
+            <div><font face='Montserrat' size='15px'>Server Name</font></div>
+        </div>
+            <div id='currentSong'>Can't display the song name</div>
+            <div id='pressspacebar'><font face='Montserrat' size='3px'>Press</div>
+            <div id = 'skipSongTip'><font face = 'Montserrat' size='3px'>Press <span id = skipSongTipLetter>A</span> to change music</font></div><script src='js/synn.js'></script>
+            
+            <div id="controlsy" style="left: 50%; top: 30%; text-align: center; width: fit-content;">
+                <UL style="background-color: rgba(31, 32, 48, 0.87); border-radius: 10px; border: 2px solid rgb(47, 47, 68); padding: 10px;">
+                    <LH style="font-size: 2rem; text-transform: uppercase; border-bottom: 2px solid rgb(85, 85, 119); padding-left: 6%; padding-right: 6%;">Controls</LH><br>
+                    <div style="text-align: center;">
+                    <LI style="margin-top: 5%;"> <span style="font-weight: 600; color: rgb(136, 136, 253);">A</span> - change music station
+                    <LI> <span id='changeColor'>Space</span> - <span id = 'muteStatus'>stop</span> music
+                    <div style="background-color: rgb(37, 31, 48); border-radius: 10px; border: 2px solid rgb(47, 47, 68); max-height: fit-content; text-align: left; padding-left: 15%; margin-top: 5%; padding-bottom: 10%;">
+                        <ul>
+                            <LI> <img src="https://media.discordapp.net/attachments/809726259457818635/959186076323430450/buttons1.png" alt="arrowkeys.png" style="max-width: 40px; position: relative; top: 13px; left: 7px; "> - moving
+                            <LI> <img src="https://media.discordapp.net/attachments/809726259457818635/959186077225209926/buttons3.png" alt="arrowkeys.png" style="max-width: 40px; position: relative; top: 13px; left: 13px;"> - rotating
+                            <LI> <img src="https://media.discordapp.net/attachments/809726259457818635/959186076822548490/buttons2.png" alt="arrowkeys.png" style="max-width: 40px; position: relative; top: 13px; left: 13px;"> - falling         
+                        </ul>
+                        <LI id="sbutton"> <span style="font-weight: 600; color: rgb(136, 136, 253);">S</span> - Dropdown
+                    </div>
+                </UL>
+            </div>
+            
+            
+           <!-- <div id='watermark'> <img src='img/Logo.png' style='max-width:25px; max-height:25px; filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.705)); position: relative; top: 6px;'> <span>this Loadingscreen was made by <span style="font-weight: 600; letter-spacing: 1px; color: rgb(142, 142, 250);">avac.online</span> <img src='img/Logo.png' style='max-width:25px; max-height:25px; filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.705)); position: relative; top: 6px;'></div>-->
+            <div class="loadbar">
+
+                <div class="progressBar"></div>
+            </div>
+            <script src="js/main.js"></script>
+            <script src='js/config.js'></script>
+            <script src='js/music-handler.js'></script>
+        </div>
+    </div> 
+</body>
+</html>
