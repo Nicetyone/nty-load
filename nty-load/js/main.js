@@ -3,7 +3,7 @@
 var count = 0;
 var thisCount = 0;
 
-playButtonClicked();
+
 const handlers = {
 
     startInitFunctionOrder(data) {
